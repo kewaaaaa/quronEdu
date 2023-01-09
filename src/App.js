@@ -3,6 +3,8 @@ import "./App.css";
 import Footer from "./layout/footer/Footer";
 import Navbar from "./layout/navbar/Navbar";
 import HomePage from "./pages/home/HomePage";
+import QuranPageClass from "./pages/quran/QuranPageClass";
+import SinglePage from "./pages/singlePage/SinglePage";
 
 // http://api.alquran.cloud/v1/quran/ar.alafasy
 
@@ -13,9 +15,11 @@ function App() {
       <div className="main">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/quran" element={<QuranPageClass />} />
+          <Route path="/posts/:number" element={<SinglePage />} />
         </Routes>
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 }

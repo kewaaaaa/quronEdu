@@ -12,9 +12,12 @@ html, body{
     flex-direction: column;
 }
 .main{
-    margin-top: 133px;
+    margin-top: 148px;
     flex: 1 1 auto;
-    background-color: black ;
+  min-height: calc(100vh - 295px);
+
+  background-image: url("./pages/home/homeUzor.jpg");
+
 }
 
 .container {
@@ -22,6 +25,16 @@ html, body{
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 260px;
+  }
+
+  .laoding{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #fff;
   }
   
   

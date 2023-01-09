@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  row-gap: 140px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .card {
+    // padding: 10px;
+    font-size: 36px;
+    font-family: "Lobster Two", cursive;
+    width: 350px;
+    height: 100px;
+    background: burlywood;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 5px solid black;
+    &:hover{
+        transform: scale(1.12) translateY(-12px);
+        transition: 0.5s;
+    }
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    border-bottom: 50px solid burlywood;
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    border-top: 50px solid burlywood;
+  }
+}

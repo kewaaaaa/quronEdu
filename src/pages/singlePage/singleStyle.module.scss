@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.card {
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+  }
+  &__surah {
+    cursor: pointer;
+    background-color: burlywood;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 50px;
+    div {
+      text-align: center;
+      font-size: calc(25px + 25 * (100vw / 1400));
+      .nois {
+        width: 50px;
+      }
+      span {
+        padding: 10px;
+        background-color: rgb(207, 207, 188);
+        border-radius: 50%;
+      }
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
