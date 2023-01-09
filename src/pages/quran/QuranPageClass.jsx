@@ -17,6 +17,7 @@ export class QuranPageClass extends Component {
     this.setState({ laoding: true });
     axios.get("http://api.alquran.cloud/v1/quran/ar.alafasy").then((res) => {
       const surahs = res.data.data.surahs;
+      
       this.setState({ surahs: surahs, laoding: false });
     });
   }
