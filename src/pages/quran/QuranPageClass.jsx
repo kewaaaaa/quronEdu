@@ -26,13 +26,14 @@ export class QuranPageClass extends Component {
         {this.state.laoding ? (
             <Laoding />
         ) : (
-          this.state.surahs.map((prod) => (
+          this.state.surahs.map((prod, key) => (
             <Link
+            key={prod.nuber}
               to={`/posts/${prod.number}`}
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <div className={s.card}>
-                <span>{prod.number}</span> {prod.englishName}
+                <span key={prod.nuber}>{prod.number}</span> {prod.englishName}
               </div>
             </Link>
           ))

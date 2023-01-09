@@ -18,7 +18,6 @@ const SinglePage = () => {
       const data = res.data.data.surahs;
       setSurah({ ...data });
       setLaoding(false);
-      console.log(data);
     });
   }, []);
 
