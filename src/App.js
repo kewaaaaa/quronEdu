@@ -4,6 +4,7 @@ import Footer from "./layout/footer/Footer";
 import Navbar from "./layout/navbar/Navbar";
 import HomePage from "./pages/home/HomePage";
 import QuranPageClass from "./pages/quran/QuranPageClass";
+import SelectCity from "./pages/selectCity/SelectCity";
 import SinglePage from "./pages/singlePage/SinglePage";
 import Times from "./pages/times/Times";
 
@@ -17,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/quran" element={<QuranPageClass />} />
-          <Route path="/times" element={<Times />} />
+          <Route path="/times" element={<SelectCity />} />
           <Route path="/posts/:number" element={<SinglePage />} />
+          <Route path="/citys/city" element={<Times />} />
         </Routes>
       </div>
       <Footer />
