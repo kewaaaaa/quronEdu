@@ -14,7 +14,7 @@ const SinglePage = () => {
   }
   useEffect(() => {
     setLaoding(true);
-    axios.get(`http://api.alquran.cloud/v1/quran/ar.alafasy`).then((res) => {
+    axios.get(`https://api.alquran.cloud/v1/quran/ar.alafasy`).then((res) => {
       const data = res.data.data.surahs;
       setSurah({ ...data });
       setLaoding(false);
