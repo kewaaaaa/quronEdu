@@ -5,11 +5,10 @@ import { useSelector } from "react-redux";
 import s from "./timesStyle.module.scss";
 
 const Times = () => {
-  const [laoding, setLaoding] = useState(false);
+  const [laoding, setLaoding] = useState(true);
   const [cityName, setCityName] = useState([{ name: "Name" }]);
   const city = useSelector((state) => state.city);
   useEffect(() => {
-    setLaoding(true);
     axios
       .get(`https://dailyprayer.abdulrcs.repl.co/api/${city}`)
       .then((res) => {

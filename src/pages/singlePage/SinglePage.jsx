@@ -5,7 +5,7 @@ import s from "./singleStyle.module.scss";
 import Laoding from "../../components/laoding/Laoding";
 
 const SinglePage = () => {
-  const [laoding, setLaoding] = useState(false);
+  const [laoding, setLaoding] = useState(true);
   const [surah, setSurah] = useState([{ name: "Name" }]);
   const { number } = useParams();
   function Play(params) {
@@ -13,7 +13,6 @@ const SinglePage = () => {
     audio.play();
   }
   useEffect(() => {
-    setLaoding(true);
     axios.get(`https://api.alquran.cloud/v1/quran/ar.alafasy`).then((res) => {
       const data = res.data.data.surahs;
       setSurah({ ...data });

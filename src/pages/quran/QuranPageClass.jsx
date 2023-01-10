@@ -9,12 +9,11 @@ export class QuranPageClass extends Component {
     super(props);
     this.state = {
       surahs: [],
-      laoding: false,
+      laoding: true,
     };
   }
 
   componentDidMount() {
-    this.setState({ laoding: true });
     axios.get("https://api.alquran.cloud/v1/quran/ar.alafasy").then((res) => {
       const surahs = res.data.data.surahs;
       
