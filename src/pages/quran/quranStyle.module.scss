@@ -14,7 +14,6 @@
   padding-top: 100px;
   padding-bottom: 100px;
   .card {
-    // padding: 10px;
     font-size: 36px;
     font-family: "Lobster Two", cursive;
     width: 350px;
@@ -47,5 +46,24 @@
     border-left: 175px solid transparent;
     border-right: 175px solid transparent;
     border-top: 50px solid burlywood;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards{
+    .card{
+      width: 270px;
+      &:hover{
+        transform: scale(1) translateY(0);
+      }
+    }
+    .card::before{
+      border-left: 135px solid transparent;
+      border-right: 135px solid transparent;
+    }
+    .card::after{
+      border-left: 135px solid transparent;
+      border-right: 135px solid transparent;  
+    }
   }
 }
