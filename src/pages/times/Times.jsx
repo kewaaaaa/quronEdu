@@ -17,7 +17,7 @@ const Times = () => {
         setCityName({ ...data });
         setLaoding(false);
       });
-  }, []);
+  }, [city]);
 
   return (
     <div>

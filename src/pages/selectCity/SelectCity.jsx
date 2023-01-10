@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import s from "./seleCity.module.scss";
 
 const SelectCity = () => {
   const inp = useRef();
   const dispatch = useDispatch();
-  const city = useSelector(state=>state.city)
   function select(params) {
     dispatch({ type: "Change_City", payload: params });
   }
