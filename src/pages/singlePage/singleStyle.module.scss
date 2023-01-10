@@ -18,12 +18,16 @@
   &__surah {
     cursor: pointer;
     outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background-color: burlywood;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 50px;
+    &:focus{
+      outline: none;
+    }
     div {
       text-align: center;
       font-size: calc(25px + 25 * (100vw / 1400));
