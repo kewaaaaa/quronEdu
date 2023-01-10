@@ -21,8 +21,11 @@
   z-index: 10;
   background-color: #fff;
   padding: 20px 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   &__logo {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     img {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       width: 200px;
     }
   }
@@ -147,9 +150,9 @@
     margin: 0 auto;
     padding: 0 10px;
   }
-  .navbar{
-    &__menu{
-      &List{
+  .navbar {
+    &__menu {
+      &List {
         width: 85%;
       }
     }
