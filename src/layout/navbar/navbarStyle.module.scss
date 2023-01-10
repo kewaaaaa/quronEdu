@@ -46,6 +46,7 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
     &Back {
       position: absolute;
@@ -57,6 +58,7 @@
       z-index: 11;
       cursor: pointer;
       display: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
     &List {
       position: fixed;
@@ -80,6 +82,7 @@
         width: 100%;
         background-color: rgba(255, 255, 255, 0.808);
         text-align: center;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
     }
     display: none;

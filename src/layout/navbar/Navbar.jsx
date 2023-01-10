@@ -65,27 +65,27 @@ const Navbar = () => {
             onClick={() => MenuClick()}
           ></div>
           <ul ref={menuList} className={s.navbar__menuList}>
-            <li>
               <Link style={{ textDecoration: "none", color: "black" }} to="/">
-                Home
-              </Link>
-            </li>
             <li>
+                Home
+            </li>
+              </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/quran"
-              >
+                >
+                <li>
                 Quran
-              </Link>
             </li>
-            <li>
+              </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/times"
-              >
+                >
+                <li>
                 Prayer times
-              </Link>
             </li>
+              </Link>
           </ul>
         </div>
       </div>
