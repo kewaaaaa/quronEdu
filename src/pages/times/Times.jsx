@@ -56,6 +56,7 @@ const Times = () => {
                   <td>Dhuhr</td>
                   <td>Asr</td>
                   <td>Maghrib</td>
+                  <td>Isha'a</td>
                 </tr>
                 <tr className={s.times__tableBody}>
                   <td>{cityName?.today?.Fajr}</td>
@@ -63,6 +64,7 @@ const Times = () => {
                   <td>{cityName?.today?.Dhuhr}</td>
                   <td>{cityName?.today?.Asr}</td>
                   <td>{cityName?.today?.Maghrib}</td>
+                  <td>{cityName?.today?.["Isha'a"]}</td>
                 </tr>
               </tbody>
             </table>
@@ -75,6 +77,7 @@ const Times = () => {
                   <td>Dhuhr</td>
                   <td>Asr</td>
                   <td>Maghrib</td>
+                  <td>Isha'a</td>
                 </tr>
                 <tr className={s.times__tableBody}>
                   <td>{cityName?.tomorrow?.Fajr}</td>
@@ -82,6 +85,7 @@ const Times = () => {
                   <td>{cityName?.tomorrow?.Dhuhr}</td>
                   <td>{cityName?.tomorrow?.Asr}</td>
                   <td>{cityName?.tomorrow?.Maghrib}</td>
+                  <td>{cityName?.tomorrow?.["Isha'a"]}</td>
                 </tr>
               </tbody>
             </table>
