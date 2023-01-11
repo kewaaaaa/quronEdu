@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.select{
+    &__box{
+        margin: 20px 0;
+        background-color: burlywood;
+        border-radius: 30px;
+        min-height: calc(100vh - 350px);
+        text-align: center;
+        padding: 100px;
+    }    
+    &__title{
+        margin-bottom: 30px;
+    }
+    input{
+        width: 200px;
+        padding: 2px 20px;
+        border-radius: 5px;
+    }
+    button{
+        padding: 2px;
+    }
+}

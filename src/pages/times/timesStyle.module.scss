@@ -6,14 +6,48 @@
 }
 .times{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__box{
+        padding: 20px;
+        background-color: burlywood;
+        border-radius: 30px;
+        min-height: calc(100vh - 400px);
+    }
     &__title{
         font-family: "Lobster Two", cursive;
         text-align: center;
         font-weight: normal;
+        span{
+            color: #fff;
+            text-shadow: rgb(31, 30, 30) 1px 0 10px;
+        }
     }
     &__date{
         font-weight: 200;
         text-align: end;
+        margin: 10px 0;
+    }
+    &__title2{
+        font-size: 26px;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    table{
+        width: 100%;
+    }
+    &__tableHead{
+        background-color: rgb(235, 200, 154);
+        width: 100%;
+        td{
+            text-align: center;
+        }
+    }
+    &__tableBody{
+        background-color: rgb(236, 181, 108);
+        td{
+            text-align: center;
+        }
     }
 
 }

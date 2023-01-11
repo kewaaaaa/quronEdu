@@ -10,8 +10,8 @@ const SelectCity = () => {
     dispatch({ type: "Change_City", payload: params });
   }
   return (
-    <div className={s.select}>
-      <div className={s.select__box + " container"}>
+    <div className={s.select + " container"}>
+      <div className={s.select__box}>
         <h1 className={s.select__title}>Enter the City Name</h1>
         <input ref={inp} type="text" placeholder="London" />
         <Link to={`/citys/city`}>

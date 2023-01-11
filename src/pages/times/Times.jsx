@@ -23,47 +23,51 @@ const Times = () => {
       {laoding ? (
         <Laoding />
       ) : (
-        <div className={s.times + " container"}>
-          <h1 className={s.times__title}>Prayer times in {cityName?.city}</h1>
-          <div className={s.times__date}>{cityName?.date}</div>
-          <h5 className={s.times__title2}>Prayer times for today</h5>
-          <table>
-            <tbody>
-              <tr className={s.times__tableHead}>
-                <td>Fajr</td>
-                <td>Sunrise</td>
-                <td>Dhuhr</td>
-                <td>Asr</td>
-                <td>Maghrib</td>
-              </tr>
-              <tr className={s.times__tableBody}>
-                <td>{cityName?.today?.Fajr}</td>
-                <td>{cityName?.today?.Sunrise}</td>
-                <td>{cityName?.today?.Dhuhr}</td>
-                <td>{cityName?.today?.Asr}</td>
-                <td>{cityName?.today?.Maghrib}</td>
-              </tr>
-            </tbody>
-          </table>
-          <h5 className={s.times__title2}>Prayer times for tomorrow</h5>
-          <table>
-            <tbody>
-              <tr className={s.times__tableHead}>
-                <td>Fajr</td>
-                <td>Sunrise</td>
-                <td>Dhuhr</td>
-                <td>Asr</td>
-                <td>Maghrib</td>
-              </tr>
-              <tr className={s.times__tableBody}>
-                <td>{cityName?.tomorrow?.Fajr}</td>
-                <td>{cityName?.tomorrow?.Sunrise}</td>
-                <td>{cityName?.tomorrow?.Dhuhr}</td>
-                <td>{cityName?.tomorrow?.Asr}</td>
-                <td>{cityName?.tomorrow?.Maghrib}</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className={s.times + ' container'}>
+          <div className={s.times__box}>
+            <h1 className={s.times__title}>
+              Prayer times in <span>{cityName?.city}</span>
+            </h1>
+            <div className={s.times__date}>{cityName?.date}</div>
+            <h5 className={s.times__title2}>Prayer times for today</h5>
+            <table>
+              <tbody>
+                <tr className={s.times__tableHead}>
+                  <td>Fajr</td>
+                  <td>Sunrise</td>
+                  <td>Dhuhr</td>
+                  <td>Asr</td>
+                  <td>Maghrib</td>
+                </tr>
+                <tr className={s.times__tableBody}>
+                  <td>{cityName?.today?.Fajr}</td>
+                  <td>{cityName?.today?.Sunrise}</td>
+                  <td>{cityName?.today?.Dhuhr}</td>
+                  <td>{cityName?.today?.Asr}</td>
+                  <td>{cityName?.today?.Maghrib}</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5 className={s.times__title2}>Prayer times for tomorrow</h5>
+            <table>
+              <tbody>
+                <tr className={s.times__tableHead}>
+                  <td>Fajr</td>
+                  <td>Sunrise</td>
+                  <td>Dhuhr</td>
+                  <td>Asr</td>
+                  <td>Maghrib</td>
+                </tr>
+                <tr className={s.times__tableBody}>
+                  <td>{cityName?.tomorrow?.Fajr}</td>
+                  <td>{cityName?.tomorrow?.Sunrise}</td>
+                  <td>{cityName?.tomorrow?.Dhuhr}</td>
+                  <td>{cityName?.tomorrow?.Asr}</td>
+                  <td>{cityName?.tomorrow?.Maghrib}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>
