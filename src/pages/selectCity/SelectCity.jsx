@@ -9,12 +9,23 @@ const SelectCity = () => {
   function select(params) {
     dispatch({ type: "Change_City", payload: params });
   }
+  function onKeyEnter(params) {
+    if (params === "Enter") {
+      window.location.href = "/city";
+      select(inp.current.value);
+    }
+  }
   return (
     <div className={s.select + " container"}>
       <div className={s.select__box}>
         <h1 className={s.select__title}>Enter the City Name</h1>
-        <input ref={inp} type="text" placeholder="London" />
-        <Link to={`/citys/city`}>
+        <input
+          onKeyDown={(e) => onKeyEnter(e.code)}
+          ref={inp}
+          type="text"
+          placeholder="London"
+        />
+        <Link to={`/city`}>
           <button onClick={() => select(inp.current.value)}>select</button>
         </Link>
       </div>

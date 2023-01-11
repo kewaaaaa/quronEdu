@@ -20,7 +20,7 @@ function App() {
           <Route path="/quran" element={<QuranPageClass />} />
           <Route path="/times" element={<SelectCity />} />
           <Route path="/posts/:number" element={<SinglePage />} />
-          <Route path="/citys/city" element={<Times />} />
+          <Route path="/city" element={<Times />} />
         </Routes>
       </div>
       <Footer />
