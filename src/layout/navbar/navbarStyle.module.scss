@@ -50,7 +50,7 @@ button {
   &__right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: calc(0px + 10 * (100vw / 1400));
   }
   &__lang {
     position: relative;

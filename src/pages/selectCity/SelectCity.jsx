@@ -36,8 +36,8 @@ const SelectCity = () => {
           type="text"
           placeholder="London"
         />
-        <Link to={`/city`}>
           <button onClick={() => select(inp.current.value)}>
+        <Link style={{color: "inherit", textDecoration: "none"}} to={`/city`}>
             {lang === "EN" ? (
               <>select</>
             ) : lang === "RU" ? (
@@ -47,8 +47,8 @@ const SelectCity = () => {
             ) : (
               <></>
             )}
-          </button>
         </Link>
+          </button>
       </div>
     </div>
   );

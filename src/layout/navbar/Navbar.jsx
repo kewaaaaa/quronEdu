@@ -123,7 +123,7 @@ const Navbar = () => {
             ></div>
             <ul ref={menuList} className={s.navbar__menuList}>
               <Link style={{ textDecoration: "none", color: "black" }} to="/">
-                <li>
+                <li onClick={() => MenuClick()}>
                   {lang === "EN" ? (
                     <>Home</>
                   ) : lang === "RU" ? (
@@ -139,7 +139,7 @@ const Navbar = () => {
                 style={{ textDecoration: "none", color: "black" }}
                 to="/quran"
               >
-                <li>
+                <li onClick={() => MenuClick()}>
                   {" "}
                   {lang === "EN" ? (
                     <>Quran</>
@@ -156,7 +156,7 @@ const Navbar = () => {
                 style={{ textDecoration: "none", color: "black" }}
                 to="/times"
               >
-                <li>
+                <li onClick={() => MenuClick()}>
                   {lang === "EN" ? (
                     <>Prayer Times</>
                   ) : lang === "RU" ? (
