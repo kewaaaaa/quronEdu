@@ -12,7 +12,7 @@ const HomePage = () => {
           <div className={s.home__quran}>
         <Link to="/quran" style={{ textDecoration: "none", color: "black" }}>
             <img src="/images/homeQuronPic.jpeg" alt="pic" />
-              {lang === "EN" ? <h1>Quran</h1> : (lang === "RU" ? <h1>Куран</h1> : (lang === "UZ" ? <h1>Quron</h1> : <></>))}
+              {lang === "EN" ? <h1>Quran</h1> : (lang === "RU" ? <h1>Куран</h1> : (lang === "UZ" ? <h1>Qur`on</h1> : <></>))}
         </Link>
           </div>
           <div className={s.home__times}>

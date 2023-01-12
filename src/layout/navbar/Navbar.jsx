@@ -2,13 +2,17 @@ import React, { useRef, useState } from "react";
 import s from "./navbarStyle.module.scss";
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
-import MenuLineIcon from "remixicon-react/MenuFoldFillIcon";
+import MenuLineIcon from "remixicon-react/MenuLineIcon";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const menuBtn = useRef();
   const menuBack = useRef();
   const menuList = useRef();
+  const langDiv = useRef();
+  const langEn = useRef();
+  const langRu = useRef();
+  const langUz = useRef();
 
   const [menuState, setMenuState] = useState(0);
 
@@ -23,11 +27,19 @@ const Navbar = () => {
       menuBack.current.style.display = "block";
     }
   }
+  function langFunc(params) {
+    langDiv.current.style.display = "flex";
+  }
 
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.lang);
   function Lang(params) {
     dispatch({ type: "Change_Lang", payload: params.target.innerHTML });
+    langEn.current.style.order = "2";
+    langRu.current.style.order = "2";
+    langUz.current.style.order = "2";
+    params.target.style.order = "1";
+    langDiv.current.style.display = "none";
   }
 
   return (
@@ -62,7 +74,7 @@ const Navbar = () => {
               ) : lang === "RU" ? (
                 <>Куран</>
               ) : lang === "UZ" ? (
-                <>Quron</>
+                <>Qur`on</>
               ) : (
                 <></>
               )}
@@ -87,11 +99,17 @@ const Navbar = () => {
         </ul>
         <div className={s.navbar__right}>
           <div className={s.navbar__lang}>
-            <button>{lang}</button>
-            <div>
-              <button onClick={(e) => Lang(e)}>EN</button>
-              <button onClick={(e) => Lang(e)}>RU</button>
-              <button onClick={(e) => Lang(e)}>UZ</button>
+            <button onClick={langFunc}>{lang}</button>
+            <div ref={langDiv} className={s.navbar__langDiv}>
+              <button ref={langEn} onClick={(e) => Lang(e)}>
+                EN
+              </button>
+              <button ref={langRu} onClick={(e) => Lang(e)}>
+                RU
+              </button>
+              <button ref={langUz} onClick={(e) => Lang(e)}>
+                UZ
+              </button>
             </div>
           </div>
           <div className={s.navbar__menu}>
@@ -128,7 +146,7 @@ const Navbar = () => {
                   ) : lang === "RU" ? (
                     <>Куран</>
                   ) : lang === "UZ" ? (
-                    <>Quron</>
+                    <>Qur`on</>
                   ) : (
                     <></>
                   )}
