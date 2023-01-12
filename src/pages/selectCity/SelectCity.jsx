@@ -30,7 +30,6 @@ const SelectCity = () => {
             <></>
           )}
         </h1>
-        <form action="">
           <input
             onKeyDown={(e) => onKeyEnter(e.code)}
             ref={inp}
@@ -53,7 +52,6 @@ const SelectCity = () => {
               )}
             </Link>
           </button>
-        </form>
       </div>
     </div>
   );
