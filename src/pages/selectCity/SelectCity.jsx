@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import s from "./seleCity.module.scss";
@@ -6,13 +6,15 @@ import s from "./seleCity.module.scss";
 const SelectCity = () => {
   const inp = useRef();
   const dispatch = useDispatch();
+  const [state, setState] = useState("nu")
   function select(params) {
     dispatch({ type: "Change_City", payload: params });
   }
   function onKeyEnter(params) {
     if (params === "Enter") {
-      window.location.href = "/city";
-      select(inp.current.value);
+      // window.location.href = "/city";
+      // select(inp.current.value);
+      setState(params)
     }
   }
   const lang = useSelector((state) => state.lang);
@@ -30,6 +32,7 @@ const SelectCity = () => {
             <></>
           )}
         </h1>
+        <div>{state}</div>
         <input
           onKeyDown={(e) => onKeyEnter(e.code)}
           ref={inp}

@@ -49,9 +49,6 @@ const SinglePage = () => {
     <div className={s.card + " container"}>
       {laoding && laoding2 ? (
         <>
-          {/* {setTimeout(() => {
-          document.location.reload(true)
-        }, 1000)} */}
           <h1 className={s.card__title}>
             {surah[number - 1]?.englishName} --- {surah[number - 1]?.name}
           </h1>
