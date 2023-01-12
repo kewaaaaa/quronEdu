@@ -25,6 +25,7 @@ const SinglePage = () => {
   }, []);
 
   useEffect(() => {
+    setLaoding2(false)
     axios
       .get(
         `https://api.alquran.cloud/v1/surah/${number}/${
