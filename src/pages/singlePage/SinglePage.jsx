@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const SinglePage = () => {
   const [laoding, setLaoding] = useState(true);
+  const [laoding2, setLaoding2] = useState(true);
   const [surah, setSurah] = useState([{ name: "Name" }]);
   const [surahLang, setSurahLang] = useState([{ name: "name" }]);
   const lang = useSelector((state) => state.lang);
@@ -30,14 +31,14 @@ const SinglePage = () => {
       .then((res) => {
         const data = res.data.data;
         setSurahLang({ data });
-        setLaoding(false);
+        setLaoding2(false);
       });
   }, [lang, number]);
   let a = 0;
 
   return (
     <div className={s.card + " container"}>
-      {laoding ? (
+      {laoding && laoding2 ? (
         <Laoding />
       ) : (
         <>
@@ -52,7 +53,7 @@ const SinglePage = () => {
                   <span>{el.number}</span>
                 </div>
                 <div style={{fontSize: "32px"}}>
-                  {surahLang.data.ayahs[a].text}
+                  {surahLang?.data?.ayahs[a]?.text}
                   <span style={{display: "none"}}>{a++}</span>
                 </div>
                 <div className={s.arabic}>{el.text}</div>
