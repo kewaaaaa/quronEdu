@@ -72,7 +72,7 @@ const Navbar = () => {
               {lang === "EN" ? (
                 <>Quran</>
               ) : lang === "RU" ? (
-                <>Куран</>
+                <>Коран</>
               ) : lang === "UZ" ? (
                 <>Qur`on</>
               ) : (
@@ -144,7 +144,7 @@ const Navbar = () => {
                   {lang === "EN" ? (
                     <>Quran</>
                   ) : lang === "RU" ? (
-                    <>Куран</>
+                    <>Коран</>
                   ) : lang === "UZ" ? (
                     <>Qur`on</>
                   ) : (
