@@ -11,7 +11,7 @@ const SelectCity = () => {
     dispatch({ type: "Change_City", payload: params });
   }
   function onKeyEnter(params) {
-    if (params === "Enter") {
+    if (true) {
       // window.location.href = "/city";
       // select(inp.current.value);
       setState(params)
