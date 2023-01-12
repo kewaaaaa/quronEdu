@@ -6,8 +6,8 @@ import Laoding from "../../components/laoding/Laoding";
 import { useSelector } from "react-redux";
 
 const SinglePage = () => {
-  const [laoding, setLaoding] = useState(true);
-  const [laoding2, setLaoding2] = useState(true);
+  const [laoding, setLaoding] = useState(false);
+  const [laoding2, setLaoding2] = useState(false);
   const [surah, setSurah] = useState([{ name: "Name" }]);
   const [surahLang, setSurahLang] = useState([{ name: "name" }]);
   const lang = useSelector((state) => state.lang);
@@ -20,18 +20,27 @@ const SinglePage = () => {
     axios.get(`https://api.alquran.cloud/v1/quran/ar.alafasy`).then((res) => {
       const data = res.data.data.surahs;
       setSurah({ ...data });
-      setLaoding(false);
+      setLaoding(true);
     });
   }, []);
 
   useEffect(() => {
-    setLaoding(true);
     axios
-      .get(`https://api.alquran.cloud/v1/surah/${number}/${lang === "UZ" ? "uz.sodik" : lang === "RU" ? "ru.kuliev" : lang === "EN" ? "en.ahmedali" : "ar.muyassar"}`)
+      .get(
+        `https://api.alquran.cloud/v1/surah/${number}/${
+          lang === "UZ"
+            ? "uz.sodik"
+            : lang === "RU"
+            ? "ru.kuliev"
+            : lang === "EN"
+            ? "en.ahmedali"
+            : "ar.muyassar"
+        }`
+      )
       .then((res) => {
         const data = res.data.data;
         setSurahLang({ data });
-        setLaoding2(false);
+        setLaoding2(true);
       });
   }, [lang, number]);
   let a = 0;
@@ -39,22 +48,22 @@ const SinglePage = () => {
   return (
     <div className={s.card + " container"}>
       {laoding && laoding2 ? (
-        <Laoding />
-      ) : (
         <>
+          {/* {setTimeout(() => {
+          document.location.reload(true)
+        }, 1000)} */}
           <h1 className={s.card__title}>
             {surah[number - 1]?.englishName} --- {surah[number - 1]?.name}
           </h1>
           <div className={s.card__content}>
-            {
-            surah[number - 1]?.ayahs?.map((el) => (
+            {surah[number - 1]?.ayahs?.map((el) => (
               <div className={s.card__surah} onClick={() => Play(el.audio)}>
                 <div>
                   <span>{el.number}</span>
                 </div>
-                <div style={{fontSize: "32px"}}>
+                <div style={{ fontSize: "32px" }}>
                   {surahLang?.data?.ayahs[a]?.text}
-                  <span style={{display: "none"}}>{a++}</span>
+                  <span style={{ display: "none" }}>{a++}</span>
                 </div>
                 <div className={s.arabic}>{el.text}</div>
                 <div>
@@ -71,6 +80,8 @@ const SinglePage = () => {
             ))}
           </div>
         </>
+      ) : (
+        <Laoding />
       )}
     </div>
   );
