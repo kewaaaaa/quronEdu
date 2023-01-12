@@ -9,14 +9,16 @@ import { Provider } from "react-redux";
 document.title = 'quranEdu'
 
 const defaultState = {
-  city: "Tashkent"
+  city: "Tashkent",
+  lang: "EN"
 }
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'Change_City':
       return {...state, city: action.payload}
-  
+    case 'Change_Lang' :
+      return {...state, lang: action.payload}
     default:
       return state
   }
