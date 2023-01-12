@@ -8,6 +8,7 @@ const Times = () => {
   const [laoding, setLaoding] = useState(true);
   const [cityName, setCityName] = useState([{ name: "Name" }]);
   const city = useSelector((state) => state.city);
+  const lang = useSelector((state) => state.lang);
   useEffect(() => {
     axios
       .get(`https://dailyprayer.abdulrcs.repl.co/api/${city}`)
@@ -15,7 +16,8 @@ const Times = () => {
         const data = res.data;
         setCityName({ ...data });
         setLaoding(false);
-      }).catch(function (error) {
+      })
+      .catch(function (error) {
         if (error.response) {
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
@@ -29,10 +31,10 @@ const Times = () => {
           console.log(error.request);
         } else {
           // Something happened in setting up the request that triggered an Error
-          console.log('Error', error.message);
+          console.log("Error", error.message);
         }
         console.log(error.config);
-        window.location.href = 'errorPage.html'
+        window.location.href = "errorPage.html";
       });
   }, [city]);
 
@@ -41,22 +43,65 @@ const Times = () => {
       {laoding ? (
         <Laoding />
       ) : (
-        <div className={s.times + ' container'}>
+        <div className={s.times + " container"}>
           <div className={s.times__box}>
             <h1 className={s.times__title}>
-              Prayer times in <span>{cityName?.city}</span>
+              {lang === "EN" ? (
+                <>Prayer times in</>
+              ) : lang === "RU" ? (
+                <>Время намаза в</>
+              ) : lang === "UZ" ? (
+                <>Namoz vaqtlari</>
+              ) : (
+                <></>
+              )}{" "}
+              <span>{cityName?.city}</span>
             </h1>
             <div className={s.times__date}>{cityName?.date}</div>
-            <h5 className={s.times__title2}>Prayer times for today</h5>
+            <h5 className={s.times__title2}>
+              {lang === "EN" ? (
+                <>Prayer times for today</>
+              ) : lang === "RU" ? (
+                <>Время намаза на сегодня</>
+              ) : lang === "UZ" ? (
+                <>Bugun uchun namoz vaqtlari</>
+              ) : (
+                <></>
+              )}
+            </h5>
             <table>
               <tbody>
                 <tr className={s.times__tableHead}>
-                  <td>Fajr</td>
-                  <td>Sunrise</td>
-                  <td>Dhuhr</td>
-                  <td>Asr</td>
-                  <td>Maghrib</td>
-                  <td>Isha'a</td>
+                  {lang === "EN" ? (
+                    <>
+                      <td>Fajr</td>
+                      <td>Sunrise</td>
+                      <td>Dhuhr</td>
+                      <td>Asr</td>
+                      <td>Maghrib</td>
+                      <td>Isha'a</td>
+                    </>
+                  ) : lang === "RU" ? (
+                    <>
+                      <td>Фаджр</td>
+                      <td>Шурук</td>
+                      <td>Зухр</td>
+                      <td>Аср</td>
+                      <td>Магриб</td>
+                      <td>Иша</td>
+                    </>
+                  ) : lang === "UZ" ? (
+                    <>
+                      <td>Tong</td>
+                      <td>Quyosh</td>
+                      <td>Peshin</td>
+                      <td>Asr</td>
+                      <td>Shom</td>
+                      <td>Xufton</td>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </tr>
                 <tr className={s.times__tableBody}>
                   <td>{cityName?.today?.Fajr}</td>
@@ -68,16 +113,50 @@ const Times = () => {
                 </tr>
               </tbody>
             </table>
-            <h5 className={s.times__title2}>Prayer times for tomorrow</h5>
+            <h5 className={s.times__title2}>
+              {lang === "EN" ? (
+                <>Prayer times for tomorrow</>
+              ) : lang === "RU" ? (
+                <>Время намаза на завтра</>
+              ) : lang === "UZ" ? (
+                <>Ertangi kun uchun namoz vaqtlari</>
+              ) : (
+                <></>
+              )}
+            </h5>
             <table>
               <tbody>
                 <tr className={s.times__tableHead}>
-                  <td>Fajr</td>
-                  <td>Sunrise</td>
-                  <td>Dhuhr</td>
-                  <td>Asr</td>
-                  <td>Maghrib</td>
-                  <td>Isha'a</td>
+                  {lang === "EN" ? (
+                    <>
+                      <td>Fajr</td>
+                      <td>Sunrise</td>
+                      <td>Dhuhr</td>
+                      <td>Asr</td>
+                      <td>Maghrib</td>
+                      <td>Isha'a</td>
+                    </>
+                  ) : lang === "RU" ? (
+                    <>
+                      <td>Фаджр</td>
+                      <td>Шурук</td>
+                      <td>Зухр</td>
+                      <td>Аср</td>
+                      <td>Магриб</td>
+                      <td>Иша</td>
+                    </>
+                  ) : lang === "UZ" ? (
+                    <>
+                      <td>Tong</td>
+                      <td>Quyosh</td>
+                      <td>Peshin</td>
+                      <td>Asr</td>
+                      <td>Shom</td>
+                      <td>Xufton</td>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </tr>
                 <tr className={s.times__tableBody}>
                   <td>{cityName?.tomorrow?.Fajr}</td>

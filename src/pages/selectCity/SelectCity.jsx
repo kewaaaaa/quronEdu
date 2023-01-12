@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import s from "./seleCity.module.scss";
 
@@ -15,10 +15,21 @@ const SelectCity = () => {
       select(inp.current.value);
     }
   }
+  const lang = useSelector((state) => state.lang);
   return (
     <div className={s.select + " container"}>
       <div className={s.select__box}>
-        <h1 className={s.select__title}>Enter the City Name</h1>
+        <h1 className={s.select__title}>
+          {lang === "EN" ? (
+            <>Enter the City Name</>
+          ) : lang === "RU" ? (
+            <>Ввидите Назание Города</>
+          ) : lang === "UZ" ? (
+            <>Shahar Nomini Kiriting</>
+          ) : (
+            <></>
+          )}
+        </h1>
         <input
           onKeyDown={(e) => onKeyEnter(e.code)}
           ref={inp}
@@ -26,7 +37,17 @@ const SelectCity = () => {
           placeholder="London"
         />
         <Link to={`/city`}>
-          <button onClick={() => select(inp.current.value)}>select</button>
+          <button onClick={() => select(inp.current.value)}>
+            {lang === "EN" ? (
+              <>select</>
+            ) : lang === "RU" ? (
+              <>Выбрать</>
+            ) : lang === "UZ" ? (
+              <>Tanlash</>
+            ) : (
+              <></>
+            )}
+          </button>
         </Link>
       </div>
     </div>
