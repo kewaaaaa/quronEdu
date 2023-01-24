@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 .footer {
-  padding: 20px 0;
+  padding: 0;
+  background-color: burlywood;
   &__box {
     display: flex;
     justify-content: space-between;
